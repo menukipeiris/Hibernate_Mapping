@@ -1,9 +1,9 @@
 package org.example;
 
 
-import config.FactoryConfiguration;
-import entity.Laptop;
-import entity.Student;
+import org.example.config.FactoryConfiguration;
+import org.example.entity.Laptop;
+import org.example.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

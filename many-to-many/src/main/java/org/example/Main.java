@@ -1,19 +1,60 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
+import org.example.config.FactoryConfiguration;
+import org.example.entity.Laptop;
+import org.example.entity.Student;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Laptop laptop=new Laptop();
+        laptop.setLid(1);
+        laptop.setModel("hp");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Laptop laptop1=new Laptop();
+        laptop1.setLid(2);
+        laptop1.setModel("dell");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        List<Laptop>laptopList=new ArrayList<>();
+        laptopList.add(laptop);
+        laptopList.add(laptop1);
+
+        Student student=new Student();
+        student.setId(1);
+        student.setName("menuki");
+        student.setAddress("colombo");
+
+        Student student1=new Student();
+        student1.setId(2);
+        student1.setName("aloka");
+        student1.setAddress("colombo");
+
+        List<Student>studentList=new ArrayList<>();
+        studentList.add(student);
+        studentList.add(student1);
+
+        student.setLaptops(laptopList);
+        student1.setLaptops(laptopList);
+
+        laptop.setStudents(studentList);
+        laptop1.setStudents(studentList);
+
+
+
+        Session session=FactoryConfiguration.getInstance().getSession();
+        Transaction transaction=session.beginTransaction();
+
+        session.save(student);
+        session.save(student1);
+        session.save(laptop);
+        session.save(laptop1);
+
+        transaction.commit();
+        session.close();
     }
 }

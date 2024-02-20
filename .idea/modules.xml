@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Eager-Fetching.iml" filepath="$PROJECT_DIR$/Eager-Fetching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HQL.iml" filepath="$PROJECT_DIR$/HQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernate_Mapping.iml" filepath="$PROJECT_DIR$/Hibernate_Mapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lazy-Fetching.iml" filepath="$PROJECT_DIR$/Lazy-Fetching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SQL.iml" filepath="$PROJECT_DIR$/SQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/many-to-many.iml" filepath="$PROJECT_DIR$/many-to-many.iml" />
+      <module fileurl="file://$PROJECT_DIR$/one-to-manyy.iml" filepath="$PROJECT_DIR$/one-to-manyy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/one-to-onee.iml" filepath="$PROJECT_DIR$/one-to-onee.iml" />
     </modules>
   </component>
 </project>

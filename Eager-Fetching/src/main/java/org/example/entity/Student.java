@@ -1,6 +1,7 @@
 package org.example.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
@@ -13,7 +14,7 @@ public class Student {
     private String name;
     private String address;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student",fetch = FetchType.EAGER)
     private List<Laptop> laptops;
 
     public Student() {
